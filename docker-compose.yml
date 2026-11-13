@@ -1,0 +1,51 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: systie_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: systie_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - systie_net
+
+  backend:
+    build: ./backend
+    image: fastapi:latest
+    container_name: systie_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:password123@db:5432/systie_db
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+    networks:
+      - systie_net
+
+  frontend:
+    build: ./frontend
+    image: systie-frontend:latest
+    container_name: systie_frontend
+    restart: always
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - systie_net
+
+volumes:
+  postgres_data:
+
+networks:
+  systie_net:
+    driver: bridge

@@ -1,0 +1,27 @@
+{
+    "sqltools.connections": [
+        {
+            "connectionMethod": "DSN",
+            "odbcOptions": {
+                "dbms": "Auto-detect",
+                "showTblRecords": "DBMS"
+            },
+            "previewLimit": 50,
+            "askForPassword": true,
+            "driver": "SQLTools ODBC Driver",
+            "name": "CPConecction",
+            "username": "sysprogress",
+            "dsnString": "MPC"
+        },
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "tiempo",
+            "database": "systie_db",
+            "username": "postgres"
+        }
+    ]
+}

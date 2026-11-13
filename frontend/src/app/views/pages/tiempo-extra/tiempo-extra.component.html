@@ -1,0 +1,13 @@
+<section class="p-6">
+  <h1 class="text-2xl font-bold text-gray-800 mb-6">Gestión de Tiempo Extra</h1>
+
+  @if (esEmpleado) {
+    <!-- Aquí se renderiza la vista exclusiva para llenar el formulario propio 
+    <app-empleado-tiempo-extra></app-empleado-tiempo-extra>-->
+  }
+
+  @if (esEncargadoOAdmin) {
+    <!-- Aquí se renderiza la tabla de supervisión, aprobación y descarga en TXT -->
+    <app-encargado-tiempo-extra></app-encargado-tiempo-extra>
+  }
+</section>

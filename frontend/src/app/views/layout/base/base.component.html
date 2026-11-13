@@ -1,0 +1,65 @@
+<div class="min-h-screen bg-gray-50 flex">
+  <header></header>
+  <!-- Menú lateral (Sidebar) -->
+  <aside class="">
+    <img src="/logo.png" alt="Logo"/>
+    <div class="w-60 mx-auto border border-red-800 "></div>
+    
+    <div class="avatar avatar-placeholder h-35" >
+      <div class="bg-red-900/80 w-24 rounded-full mx-30 my-5">
+        <span class="text-sm font-normal text-black-500 text-center">{{ usuario?.nombre | slice:0:2 }}</span>
+      </div>
+    </div>
+    <p class="text-sm font-normal text-gray-500 text-center">{{ usuario?.nivel || 'Cargando...' }}</p>
+    <p class="text-sm font-normal text-gray-500 text-center">{{ usuario?.nombre || 'Cargando...' }}</p>
+    <div class="w-60 mx-auto border border-gray-300 my-5"></div>
+    
+<ul class="w-70 mx-auto" >
+  @switch (usuario?.nivel) {
+    @case ('encargado') {
+    <li>
+      <a routerLink="/TiempoExtra" routerLinkActive="bg-red-50 font-semibold" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition text-sm">Tiempo Extra</a>
+    </li>
+    <li>
+      <a routerLink="/insights" routerLinkActive="bg-red-50  font-semibold" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition text-sm">Kardex</a>
+    </li>
+    <li>
+      <a routerLink="/insights" routerLinkActive="bg-red-50  font-semibold" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition text-sm">Entradas</a>
+    </li>
+    }
+    @case ('supervisor') {
+    <li>
+      <a routerLink="/insights" routerLinkActive="bg-red-50 font-semibold" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition text-sm">Tiempo Extra</a>
+    </li>
+    <li>
+      <a routerLink="/insights" routerLinkActive="bg-red-50  font-semibold" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition text-sm">Kardex</a>
+    </li>
+    <li>
+      <a routerLink="/insights" routerLinkActive="bg-red-50  font-semibold " class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition text-sm">Entradas</a>
+    </li>
+    }
+    @case ('usuario') {
+    <li>
+      <a routerLink="/insights" routerLinkActive="bg-red-50 font-semibold" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition text-sm">Tiempo Extra</a>
+    </li>
+    <li>
+      <a routerLink="/insights" routerLinkActive="bg-red-50 font-semibold" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition text-sm">Kardex</a>
+    </li>
+    <li>
+      <a routerLink="/insights" routerLinkActive="bg-red-50 font-semibold" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition text-sm">Entradas</a>
+    </li>
+    }
+    @default {
+      Default case.
+    }
+}
+</ul>
+  <div class="w-30 mx-auto my-5 text-center"><button (click)="logout()" class="btn btn-soft btn-secondary">Cerrar sesión</button></div>
+  </aside>
+  <footer>  </footer>
+
+  <!-- Área de contenido donde se renderizan las rutas hijas -->
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy[asyncio]
+asyncpg
+greenlet
+pydantic-settings
+polars
+python-multipart
+PyJWT
+python-jose[cryptography]

@@ -1,0 +1,71 @@
+header {
+    width: 100vw;
+    height: 15vh;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+      --s: 48px; /* control the size*/
+  --c1: #ffffff;
+  --c2: #e0b87f;
+  
+  --_s: calc(2*var(--s)) calc(2*var(--s));
+  --_g: 35.36% 35.36% at;
+  --_c: #0000 66%,var(--c2) 68% 70%,#0000 72%;
+  background:
+    radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s),
+    radial-gradient(var(--_g) 0    75%,var(--_c)) var(--s) var(--s)/var(--_s),
+    radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s),
+    radial-gradient(var(--_g) 0    75%,var(--_c)) 0 0/var(--_s),
+    repeating-conic-gradient(var(--c1) 0 25%,#0000 0 50%) 0 0/var(--_s),
+    radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s)
+    var(--c1);
+
+  /* --- Degradado de opacidad (Máscara) --- */
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 100%);
+  mask-image: linear-gradient(to top, transparent 0%, black 100%);
+}
+ aside {
+    width: 25%;
+    height: 90vh;
+    position: absolute;
+    background-color: white;
+    top:5%;
+    left: 1%;
+    border-radius: 40px;
+    box-shadow: 12px 5px 15px 9px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+aside img {
+    width: 80%;
+    height: 20%;
+    margin: auto;
+}
+footer {
+
+    width: 100vw;
+    height: 15vh;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+
+  --s: 48px; /* control the size*/
+  --c1: #ffffff;
+  --c2: #e0b87f;
+  
+  --_s: calc(2*var(--s)) calc(2*var(--s));
+  --_g: 35.36% 35.36% at;
+  --_c: #0000 66%,var(--c2) 68% 70%,#0000 72%;
+  background:
+    radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s),
+    radial-gradient(var(--_g) 0    75%,var(--_c)) var(--s) var(--s)/var(--_s),
+    radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s),
+    radial-gradient(var(--_g) 0    75%,var(--_c)) 0 0/var(--_s),
+    repeating-conic-gradient(var(--c1) 0 25%,#0000 0 50%) 0 0/var(--_s),
+    radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s)
+    var(--c1);
+
+  /* --- Degradado de opacidad (Máscara) --- */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+}
